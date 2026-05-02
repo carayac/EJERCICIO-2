@@ -1,14 +1,18 @@
 module Main where
 
-saludar :: String -> String
-saludar nombre = "Hola, " ++ nombre ++ "! Bienvenido a Haskell."
 
 main :: IO ()
 main = do
+  nombre
   lista <- solicitarListaEnteros
   let resultado = sumaCuadradosLista lista
   putStrLn $ "La suma de los cuadrados de la lista es: " ++ show resultado
 
+nombre :: IO ()
+nombre = do
+  putStrLn "¿Cuál es su nombre?"
+  nombre <- getLine
+  putStrLn ("¡Hola " ++nombre++ "!")
 
 solicitarListaEnteros :: IO [Int]
 solicitarListaEnteros = do
@@ -20,3 +24,9 @@ solicitarListaEnteros = do
 
 sumaCuadradosLista :: [Int] -> Int
 sumaCuadradosLista lista = sum[x^2 | x <- lista]
+
+
+
+
+
+
