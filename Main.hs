@@ -24,4 +24,4 @@ sumaCuadradosLista :: [Int] -> Int
 sumaCuadradosLista lista = sum[x^2 | x <- lista]
 
 paresMenoresA20 :: [Int]
-paresMenoresA20 = [ x | x <- [1..20], even x, x < 20 ]
+paresMenoresA20 = [x | x <- [1..20], (\n -> even n && n < 20) x]
