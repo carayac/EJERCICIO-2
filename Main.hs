@@ -10,6 +10,8 @@ main = do
   lista <- solicitarListaEnteros
   let cantPares = cuentaPares lista
   putStrLn $ "En la lista hay " ++ show cantPares ++ " enteros pares."
+  let listaPares = paresMenoresA20
+  putStrLn $ "Lista de pares menores a 20: " ++ show listaPares
 
 nombre :: IO ()
 nombre = do
@@ -32,3 +34,6 @@ sumaCuadradosLista lista = sum[x^2 | x <- lista]
 cuentaPares :: [Int] -> Int
 cuentaPares lista = length listaPares
   where listaPares = filter even lista
+
+paresMenoresA20 :: [Int]
+paresMenoresA20 = [x | x <- [1..20], (\n -> even n && n < 20) x]
